@@ -1,9 +1,10 @@
 """Explicit main execution module."""
 
-from example import Example
+from inventory_app import InventoryApp
 
 
 def main():
+	# start app
 
 
 # Call main() if this is the main execution module

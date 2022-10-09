@@ -18,6 +18,7 @@ class InventoryApp:
             print('new_inventory() method called...')
         
     
-    def clear_screen #clears screen. requires importing os
-        os.system('clear') """apparently works on windows as long as file is called from build.sh file"""
-    
+    def clear_screen(self): #clears screen. requires importing os module:
+        os.system('clear') #apparently works on windows as long as file is called from build.sh file
+        return()
+
