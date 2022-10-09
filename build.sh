@@ -8,9 +8,8 @@
 #: Options      : None
 
 # Global Constants
-# TOOLS: A list of required tools. Edit as required. Sometoolnotinstalled to 
-#        show what a missing tool message looks like. 
-declare -r TOOLS="aws git python3 pipenv sometoolnotinstalled"
+# TOOLS: A list of required tools.  
+declare -r TOOLS="git python3 pipenv"
 
 # Global Variables 
 declare _confirm=1
@@ -34,7 +33,7 @@ display_usage() {
 	echo "           ./`basename $0` --help         		# Check for required tools "
 	echo "           ./`basename $0`                		# Default: -checktools and -help "
 	echo "           ./`basename $0` --install      		# pipenv install "
-	echo "           ./`basename $0` --runmain      		# pipenv run python3 src/main.py "
+	echo "           ./`basename $0` --runmain      		# pipenv run python src/main.py "
 	echo "           ./`basename $0` --runtests     		# pipevn run pytest "
 	echo "           ./`basename $0` --checkdoccomments	# pipevn run pydocstyle src/ "
 }
@@ -49,7 +48,7 @@ runtests() {
 }
 
 runmain() {
-	pipenv run python3 src/main.py
+	pipenv run python src/main.py
 }
 
 install() {
