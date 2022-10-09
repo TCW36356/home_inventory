@@ -1,5 +1,7 @@
 """Represents application user interface"""
 
+import os #imports os to allow for clearing the python screen
+
 class InventoryApp:
 
     def __init__(self):
@@ -14,4 +16,8 @@ class InventoryApp:
     def new_inventory(self):
         if __debug__:
             print('new_inventory() method called...')
+        
+    
+    def clear_screen #clears screen. requires importing os
+        os.system('clear') """apparently works on windows as long as file is called from build.sh file"""
     
