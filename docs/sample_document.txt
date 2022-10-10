@@ -2,3 +2,4 @@ Issues:
 
 Not sure why __debug__ keeps running on mine, but not on the original. What's up with that?
 
+Consulted with test users before publishing.

@@ -84,7 +84,7 @@ class InventoryApp:
             item_name = input('There\'s WHAT in the house? ')
             item_count = input('There\'s HOW MANY?? ')
             self.item_storage.add_inventory_items(item_name, item_count)
-            its_working = input('There\'s MORE?! (y/n): ')
+            its_working = input('There\'s MORE stuff to add?! (y/n): ')
 
     def clear_screen(self): #clears screen. requires importing os module
         os.system('clear') # apparently works on windows as long as file is called from build.sh file
