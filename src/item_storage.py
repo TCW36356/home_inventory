@@ -13,6 +13,20 @@ class itemStorage:
         # needs to create a new inventory list when called
         self._create_new_inventory_list()
 
+    # new inventory selection from inventory_app
+    def new_inventory(self):
+        # ensure that user can save current inventory before opening a new one.
+        # because a new inventory list is created on running app, there will always be a current inventory
+        user_input = input("Save current inventory? (y/n): ")[0]
+        match user_input.lower():
+            case 'y':
+                self.save_inventory()
+                self._create_new_inventory_list()
+            case 'n':
+                self._create_new_inventory_list()
+            case _:
+                self._create_new_inventory_list()
+    
     #create inventory list dictionary
     def _create_new_inventory_list(self):
         if __debug__:
@@ -26,6 +40,32 @@ class itemStorage:
         if __debug__:
             print('New Inventory created.')
     
+    def save_inventory(self):
+        # output item storage list to file
+        if __debug__:
+            print('attempting to save inventory...')
+        """ensures there is an inventory loaded. 
+        Not sure this is necessary - there shouldn't be a point in the running of the program where no inventory exists."""
+        if self.inventory != None:
+            file_path = self._retrieve_file_path()
+            # calls parameters file_path, write-priveledges, UTF-8
+            with open(file_path, 'w', encoding='UTF-8') as f:
+                # writes inventory to json file in json-formatted str
+                f.write(json.dumps(self.inventory))
+
+    def load_inventory(self):
+        # load inventory from file
+        if __debug__:
+            print('attempting to load inventory...')
+        # include try/except to allow for errors in entering file path
+        try:
+            file_path = self._retrieve_file_path()
+            # calls paramenters file_path, read-priveledges, UTF-8 encoding
+            with open(file_path, 'r', encoding='UTF-8') as f:
+                self.inventory = json.loads(f.read())
+        except OSError:
+            print('File path or file does not exist. Try again.')
+
     def add_inventory_items(self, item_name, item_count):
         if __debug__:
             print('Adding items to inventory')
@@ -47,8 +87,10 @@ class itemStorage:
                 for item in v:
                     # create f strings so string return can read from list
                     print(f'\t {item["item"]:15} \t {item["count"]}')
-            else:
+            elif k == 'actual date':
                 print(f'{k}: \t {v}')
+            else:
+                print(f'{k}: \t\t {v}')
     
     # show total count
     def full_count(self):

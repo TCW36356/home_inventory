@@ -5,7 +5,9 @@ from inventory_app import InventoryApp
 
 def main():
 	# start app
-	pass
+	home_inventory_app = InventoryApp()
+	home_inventory_app.turn_ignition()
+
 
 
 # Call main() if this is the main execution module
