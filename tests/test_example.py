@@ -1,7 +1,7 @@
 import pytest
-from context import Example
+from context import main
 
-class Test_Example:
+class Test_main:
 
 	def test_increment(self):
 		example = Example()

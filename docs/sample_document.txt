@@ -1,5 +1,4 @@
-Sample Document
+Issues:
 
-Just a placeholder textfile to have something in this folder.
+Not sure why __debug__ keeps running on mine, but not on the original. What's up with that?
 
-Store project documentation in the docs folder. Also, auto-generated documentation should be stored here as well.

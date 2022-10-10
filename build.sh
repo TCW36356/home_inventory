@@ -1,10 +1,10 @@
 #!/bin/bash
 
 #: Title        : build.sh
-#: Date         : 10 September 2022
+#: Date         : 10 October 2022
 #: Author       : Rick Miller
-#: Version      : 1.0
-#: Description  : Build script template
+#: Version      : 1.1 - Updated by Tom Wilson
+#: Description  : Build script for windows machine running home inventory
 #: Options      : None
 
 # Global Constants
@@ -48,7 +48,7 @@ runtests() {
 }
 
 runmain() {
-	pipenv run python src/main.py
+	pipenv run python -O src/main.py
 }
 
 install() {

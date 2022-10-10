@@ -73,14 +73,14 @@ class itemStorage:
 
     def _retrieve_file_path(self):
         # where to store/retrieve inventory
-        save_where = input("Please enter the path and filename:")
+        save_where = input("Please enter the path and filename: ")
         return save_where
     
     # print list
     def list_inventory(self):
         if __debug__:
             print('printing loaded inventory to screen')
-        #runs through inventory dictionary. prints type, date, etc., then the items in the inventory
+        # runs through inventory dictionary. prints type, date, etc., then the items in the inventory
         for k, v in self.inventory.items():
             if k == 'items':
                 print('what\'s in the house:')
