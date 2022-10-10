@@ -99,3 +99,10 @@ class itemStorage:
             total_count += item['count']
         print(f'the total number of items in the house is: \t {total_count}')
 
+    def search_storage(self):
+        where_is = input('What are you looking for: ')
+        for item in self.inventory['items']:
+            if item['item'] == where_is:
+                print(f'There are {item["count"]} of those.')
+            else:
+                continue

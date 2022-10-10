@@ -13,9 +13,10 @@ class InventoryApp:
         self.LOAD_INVENTORY='2'
         self.SHOW_ITEMS='3'
         self.ADD_ITEMS='4'
-        self.SAVE_INVENTORY='5'
-        self.PLAY_VIDEO='6'
-        self.EXIT='7'
+        self.SEARCH_INVENTORY='5'
+        self.SAVE_INVENTORY='6'
+        self.PLAY_VIDEO='7'
+        self.EXIT='8'
         # other fields that should be initialized
         self.menu_choice = 1 # not sure what this one does. I think it may create a new inventory when app starts.
         self.its_working = True
@@ -29,9 +30,10 @@ class InventoryApp:
         print('\t\t2. Load Inventory')
         print('\t\t3. Show Items in House')
         print('\t\t4. Add Items')
-        print('\t\t5. Save Inventory')
-        print('\t\t6. Play Video')
-        print('\t\t7. Exit\n')
+        print('\t\t5. Search Inventory')
+        print('\t\t6. Save Inventory')
+        print('\t\t7. Play Video')
+        print('\t\t8. Exit\n')
         
 
     def process_menu_choice(self):
@@ -48,6 +50,8 @@ class InventoryApp:
                 self.show_inventory()
             case self.ADD_ITEMS:
                 self.add_to_inventory()
+            case self.SEARCH_INVENTORY:
+                self.search_inventory()
             case self.SAVE_INVENTORY:
                 self.save_inventory()
             case self.PLAY_VIDEO:
@@ -96,6 +100,14 @@ class InventoryApp:
         self.clear_screen()
         self.item_storage.list_inventory()
         self.item_storage.full_count()
+        input('Press any key to continue: ')
+        self.clear_screen()
+
+    def search_inventory(self):
+        if __debug__:
+            print('searching inventory')
+        self.clear_screen()
+        self.item_storage.search_storage()
         input('Press any key to continue: ')
         self.clear_screen()
 
