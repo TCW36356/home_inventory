@@ -34,7 +34,7 @@ class itemStorage:
         self.inventory = {}
         self.inventory['type'] = 'An Inventory'
         self.inventory['date'] = 'A long time ago, in a galaxy far, far away...'
-        self.inventory['actual date'] = date.today().isoformat()
+        self.inventory['actual_date'] = date.today().isoformat()
         #create list to hold inventory items
         self.inventory['items'] = []
         if __debug__:
