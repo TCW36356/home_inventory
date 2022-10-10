@@ -106,3 +106,4 @@ class itemStorage:
                 print(f'There are {item["count"]} of those.')
             else:
                 continue
+        # I'd like to add a line that returns "item not found" if value is not in inventory. Not sure how, though.
