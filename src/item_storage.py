@@ -101,9 +101,12 @@ class itemStorage:
 
     def search_storage(self):
         where_is = input('What are you looking for: ')
+        found = False
         for item in self.inventory['items']:
             if item['item'] == where_is:
+                found = True
                 print(f'There are {item["count"]} of those.')
             else:
                 continue
-        # I'd like to add a line that returns "item not found" if value is not in inventory. Not sure how, though.
+        if found == False:
+            print('Item not found.')
