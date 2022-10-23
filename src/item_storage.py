@@ -85,7 +85,7 @@ class itemStorage:
             if k == 'items':
                 print('what\'s in the house:')
                 for item in v:
-                    # create f strings so string return can read from list
+                    # create f strings so string return can read from list, go out 15 spaces
                     print(f'\t {item["item"]:15} \t {item["count"]}')
             elif k == 'actual date':
                 print(f'{k}: \t {v}')
